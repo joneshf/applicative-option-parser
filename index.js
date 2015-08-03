@@ -272,13 +272,13 @@ var stepParser = function(parser, arg, args) {
 }
 
 var ex1 = runParser(parser, ['--ident', '1', '--name', 'john']).map(fst);
-console.log('%s', ex1);
+console.log('%s', ex1); //=> Just(User(john,1))
 
 var ex2 = runParser(parser, ['--name', 'jacob', '--ident', '2']).map(fst);
-console.log('%s', ex2);
+console.log('%s', ex2); //=> Just(User(jacob,2))
 
 var ex3 = runParser(parser, ['--name', 'jingleheimer']).map(fst);
-console.log('%s', ex3);
+console.log('%s', ex3); //=> Nothing
 
 var ex4 = runParser(parser, ['--name', 'schmidt', '--verbose', '3']).map(fst);
-console.log('%s', ex4);
+console.log('%s', ex4); //=> Nothing
