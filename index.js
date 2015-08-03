@@ -231,7 +231,7 @@ User = function(name, ident) {
   }));
 };
 
-var parser = map2(curry2(User), option('name', Just), option('ident', Just));
+var parser = map2(curry2(User), option('name', Just), option('ident', readInt));
 
 var runParser = function(parser, args) {
   return parser.cata({
